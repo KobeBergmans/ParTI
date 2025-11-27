@@ -51,7 +51,7 @@ int main(int argc, char ** argv) {
     sptIndex mode = PARTI_INDEX_MAX;
     sptElementIndex R = 16;
     int dev_id = -2;
-    int niters = 5;
+    int niters = 20;
     int nt = 1;
     int par_iters = 0;
     printf("niters: %d\n", niters);
@@ -148,7 +148,7 @@ int main(int argc, char ** argv) {
     sptIndex max_ndims = 0;
     for(sptIndex m=0; m<nmodes; ++m) {
       sptAssert(sptNewRankMatrix(U[m], hitsr.ndims[m], R) == 0);
-      sptAssert(sptRandomizeRankMatrix(U[m], tsr.ndims[m], R) == 0);
+      sptAssert(sptRandomizeRankMatrix(U[m], hitsr.ndims[m], R) == 0);
       // sptAssert(sptConstantRankMatrix(U[m], 1) == 0);
       if(hitsr.ndims[m] > max_ndims)
         max_ndims = hitsr.ndims[m];
